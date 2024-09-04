@@ -28,6 +28,29 @@ class Player(pygame.sprite.Sprite):
         self.image = pygame.image.load("spaceship.png")
         self.rect = self.image.get_rect()
         self.rect.center = (scwidth // 2, sclength - 50)  # Position the player at the bottom center of the screen
+        self.speed = 5
+
+
+    def update(self):
+        keys = pygame.key.get_pressed()
+        if keys[K_LEFT] or keys[K_a]:
+            self.rect.x -= self.speed
+        if keys[K_RIGHT] or keys[K_d]:
+            self.rect.x += self.speed
+        if keys[K_UP] or keys[K_w]:
+            self.rect.y -= self.speed
+        if keys[K_DOWN] or keys[K_s]:
+            self.rect.y += self.speed
+
+        # Keep the player within screen bounds
+        if self.rect.left < 0:
+            self.rect.left = 0
+        if self.rect.right > scwidth:
+            self.rect.right = scwidth
+        if self.rect.top < 0:
+            self.rect.top = 0
+        if self.rect.bottom > sclength:
+            self.rect.bottom = sclength
 
 # Instantiate player one
 player_one = Player()
@@ -43,6 +66,9 @@ while isrunning:
             pygame.quit()
             sys.exit()
 
+    
+    # Update all sprites
+    all_sprites.update()
     # Clear the screen
     screen.fill(WHITE)
 
