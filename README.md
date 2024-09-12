@@ -2,3 +2,10 @@ Space Wars is  a 2d game made with Pygame which is a library that is probably th
 The Pygame framework includes several modules with functions for drawing graphics, playing sounds, handling mouse input, and other things you’ll need while developing games in Python.
 
 In the game I have managed to do most of the necessary stuff, from there on the remaining bit will be done after further learning of the library
+
+To download the game just go to this link below
+https://biboking-373.github.io/spaceshooter_portfolio.github.io/
+
+How to play
+You can use your arrow keys or w,a,s,d to move and spacebar for shooting
+
